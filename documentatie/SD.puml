@@ -1,0 +1,16 @@
+
+@startuml
+actor Gebruiker
+participant UI
+participant Controller
+participant "CSV Import Module" as CSV
+participant "Database Module" as DB
+
+Gebruiker -> UI: Selecteer CSV-import
+UI -> Controller: Start CSV import
+Controller -> CSV: parseCSV(file)
+CSV -> DB: sla gegevens op
+DB --> CSV: bevestiging
+CSV --> Controller: import voltooid
+Controller -> UI: toon succesmelding
+@enduml

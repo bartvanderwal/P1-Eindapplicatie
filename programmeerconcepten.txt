@@ -1,0 +1,21 @@
+output (print)
+input (input)
+variabelen (numeriek (int/decimal ?), boolean en tekst/aanhalingstekens)
+scope
+lijsten (toevoegen)
+conditionals
+rekenen ( komma/punt/*) ?
+indentation
+for (each)
+range ?
+functies
+logica (and/or/not) ?
+while
+lijst indexering ?
+debug ?
+objecten (gebruik)
+
+pep8 met juist instellingen
+sqllite3 editor
+python (linter?)
+

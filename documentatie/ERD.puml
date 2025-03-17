@@ -1,0 +1,13 @@
+@startuml
+entity "Person" {
+  * name : TEXT <<PK>>
+  * distance : REAL
+}
+
+entity "Hobby" {
+  * name : TEXT <<PK,FK>>
+  * hobby : TEXT <<PK>>
+}
+
+Person ||--o{ Hobby : heeft
+@enduml

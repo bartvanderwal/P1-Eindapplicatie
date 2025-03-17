@@ -1,0 +1,16 @@
+
+@startuml
+actor Gebruiker
+participant UI
+participant Controller
+participant "Hobby Management Module" as Hobby
+participant "Database Module" as DB
+
+Gebruiker -> UI: Selecteer persoon en hobby
+UI -> Controller: voeg hobby toe
+Controller -> Hobby: addHobby(naam, hobby)
+Hobby -> DB: update record
+DB --> Hobby: bevestiging
+Hobby --> Controller: succes
+Controller -> UI: toon bevestiging
+@enduml

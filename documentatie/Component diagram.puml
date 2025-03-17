@@ -1,0 +1,10 @@
+
+@startuml
+package "P1 Eindapplicatie" {
+  [UI] --> [CSV Import]
+  [UI] --> [Hobby Management]
+  [UI] --> [Visualisation]
+  [CSV Import] --> [Database]
+  [Hobby Management] --> [Database]
+}
+@enduml

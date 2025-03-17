@@ -1,0 +1,4 @@
+Ik wil een applicatie waarmee ik voor elke student in mijn klas kan vastleggen
+hoe ver hij/zij/x van de hogeschool woont, en ook wil ik voor elke student
+enkele hobby's kunnen vastleggen en bewerken. Op deze manier leer ik mijn
+studenten beter kennen, en leren zij elkaar ook beter kennen.

@@ -1,1 +1,1 @@
-python ui.py
+python klaskompas.py

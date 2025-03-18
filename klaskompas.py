@@ -14,8 +14,8 @@
 # - Wat meer complexiteit in parameters en return values zou goed zijn, daar
 #   moeten ze mee oefenen.
 """UI component (en startpunt) van de Eindapplicatie voor P1"""
-from csv_import import read_data_from_csv, save_person_data_to_database
-from database import empty_database, update_distance_in_database
+from person_management import import_persons_to_database, \
+    update_distance_in_database, delete_persons_from_database
 from hobby_management import add_hobby_to_database, \
     delete_hobby_from_database, \
     print_hobbies_from_database
@@ -23,8 +23,6 @@ from visualisation import create_distance_bar_chart, create_vertical_distance_ba
 
 def main():
     """Startpunt van de applicatie"""
-    csv_file = 'data/data.csv'
-
     while True:
         print("Menu:")
         print("1. Vul database met data uit CSV-bestand (namen en afstanden)")
@@ -39,8 +37,7 @@ def main():
         choice = input("Kies een optie: ")
 
         if choice == '1':
-            data = read_data_from_csv(csv_file)
-            save_person_data_to_database(data)
+            import_persons_to_database()
         elif choice == '2':
             name = input("Voer naam in: ")
             hobby = input("Voer hobby in: ")
@@ -66,7 +63,7 @@ def main():
         elif choice == '6':
             print_hobbies_from_database()
         elif choice == '7':
-            empty_database()
+            delete_persons_from_database()
         elif choice == '8':
             break
         else:

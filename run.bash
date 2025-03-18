@@ -1,2 +1,2 @@
 source .env/bin/activate
-python3 ui.py
+python3 klaskompas.py

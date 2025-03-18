@@ -30,23 +30,3 @@ def person_with_hobby_exists_in_database(name, hobby):
     row = db.fetchone()
     disconnect_from_database(db)
     return row is not None
-
-def update_distance_in_database(name, new_distance):
-    """Functie om record bij te werken in database"""
-    if not person_exists_in_database(name):
-        print("Persoon niet gevonden in database.")
-    elif new_distance < 0:
-        print("Ongeldige waarde voor afstand.")
-    else:
-        db = connect_to_database()
-        db.execute('UPDATE person SET afstand = ? WHERE name = ?', (new_distance, name))
-        disconnect_from_database(db)
-        print("Afstand bijgewerkt in database.")
-
-def empty_database():
-    """Functie om database te legen"""
-    db = connect_to_database()
-    db.execute('DELETE FROM hobby')
-    db.execute('DELETE FROM person')
-    disconnect_from_database(db)
-    print("Database geleegd.")

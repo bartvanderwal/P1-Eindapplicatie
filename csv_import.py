@@ -1,8 +1,7 @@
 """CSV Import component voor Eindapplicatie voor P1"""
 
 import csv
-import sqlite3
-from database import person_exists_in_database
+from database import person_exists_in_database, connect_to_database, disconnect_from_database
 
 def read_data_from_csv(file_path):
     """Functie om data uit CSV-bestand te lezen"""
@@ -13,18 +12,16 @@ def read_data_from_csv(file_path):
             data.append(row)
     return data
 
-def save_person_data_to_database(db_name, data):
+def save_person_data_to_database(data):
     """Functie om persoonsdata (naam, afstand) in SQLite-database op te slaan"""
-    conn = sqlite3.connect(db_name)
-    cursor = conn.cursor()
+    db = connect_to_database()
 
     for row in data:
         name=row[0]
         distance=float(row[1])
-        if person_exists_in_database(db_name, name):
+        if person_exists_in_database(name):
             print("Persoon " + name + " bestaat al in database.")
         else:
-            cursor.execute('INSERT INTO person VALUES (?, ?)', (name, distance))
+            db.execute('INSERT INTO person VALUES (?, ?)', (name, distance))
 
-    conn.commit()
-    conn.close()
+    disconnect_from_database(db)

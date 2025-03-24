@@ -1,0 +1,9 @@
+@startuml
+
+start  
+:Docent selecteert optie tonen studenten en hobbies;  
+:Systeem haalt gegevens uit database;  
+:Systeem toont gegevens op scherm;  
+stop  
+
+@enduml

@@ -1,0 +1,11 @@
+@startuml  
+
+start  
+:Docent selecteert optie om een CSV-bestand in te lezen;  
+:Systeem opent CSV bestand;
+:Systeem leest CSV bestand in;  
+:Systeem importeert nieuwe personen in de database;  
+:Systeem geeft bevestiging van succesvolle import;  
+stop  
+
+@enduml  

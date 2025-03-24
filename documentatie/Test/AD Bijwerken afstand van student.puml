@@ -1,0 +1,11 @@
+@startuml  
+
+start  
+:Docent selecteert optie om een afstand van een student bij te werken;
+:Docent voert naam van student en nieuwe afstand in;
+:Docent voert nieuwe afstand tot school in;
+:Systeem update de afstand van de student in de database;
+:Systeem geeft bevestiging van succesvolle update;
+stop  
+
+@enduml  

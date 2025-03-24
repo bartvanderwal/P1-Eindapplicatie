@@ -1,0 +1,11 @@
+@startuml
+
+start  
+:Docent selecteert optie om hobby toe te voegen of verwijderen;  
+:Docent voert naam van student in;
+:Docent voert hobby in;  
+:Hobby toevoegen bij student aan database;  
+:Bevestiging weergeven van succesvolle toevoeging;  
+stop  
+
+@enduml

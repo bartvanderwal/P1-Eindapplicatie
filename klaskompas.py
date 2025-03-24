@@ -16,10 +16,11 @@
 """UI component (en startpunt) van de Eindapplicatie voor P1"""
 from person_management import import_persons_to_database, \
     update_distance_in_database, delete_persons_from_database
-from hobby_management import add_hobby_to_database, \
-    delete_hobby_from_database, \
+from hobby_management import add_hobby_if_person_exists, \
+    remove_hobby_if_exists, \
     print_hobbies_from_database
-from visualisation import create_distance_bar_chart, create_vertical_distance_bar_chart
+from visualisation import create_distance_bar_chart, \
+    create_vertical_distance_bar_chart
 
 def main():
     """Startpunt van de applicatie"""
@@ -41,7 +42,7 @@ def main():
         elif choice == '2':
             name = input("Voer naam in: ")
             hobby = input("Voer hobby in: ")
-            add_hobby_to_database(name, hobby)
+            add_hobby_if_person_exists(name, hobby)
         elif choice == '3':
             name = input("Voer naam in van de persoon die u wilt bijwerken: ")
             new_distance = float(input("Voer nieuwe afstand in: "))
@@ -49,7 +50,7 @@ def main():
         elif choice == '4':
             name = input("Voer naam in van record dat u wilt verwijderen: ")
             hobby = input("Voer hobby in van record dat u wilt verwijderen: ")
-            delete_hobby_from_database(name, hobby)
+            remove_hobby_if_exists(name, hobby)
         elif choice == '5':
             subchoice = input("Wilt u een verticale (1) of horizontale (2) grafiek? ")
             if subchoice == '1':

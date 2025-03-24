@@ -1,0 +1,17 @@
+@startuml
+
+start  
+:Gebruiker selecteert optie om hobby toe te voegen of verwijderen;  
+if (Hobby toevoegen) then  
+  :Gebruiker voert naam van persoon en hobby in;  
+  :Hobby toevoegen aan database;  
+  :Bevestiging weergeven van succesvolle toevoeging;  
+else  
+  :Gebruiker voert naam van persoon en hobby in;  
+  :Hobby verwijderen uit database;  
+  :Bevestiging weergeven van succesvolle verwijdering;  
+endif  
+  
+stop  
+
+@enduml

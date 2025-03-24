@@ -1,7 +1,7 @@
 @startuml
 
 start  
-:Docent selecteert optie om hobby toe te voegen of verwijderen;  
+:Docent selecteert optie om hobby toe te voegen;  
 :Docent voert naam van student in;
 :Docent voert hobby in;  
 :Hobby toevoegen bij student aan database;  

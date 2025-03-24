@@ -1,0 +1,11 @@
+@startuml
+
+start  
+:Docent selecteert optie om hobby te verwijderen;  
+:Docent voert naam van student in;
+:Docent voert hobby in die verwijderd moet worden;  
+:Hobby verwijderen bij student uit database;  
+:Bevestiging weergeven van succesvolle verwijdering;  
+stop  
+
+@enduml

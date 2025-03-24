@@ -1,3 +1,7 @@
 .env
 data.db
 **/__pycache__/
+# Tijdelijke files van Office
+~$*
+# Mac OS
+.DS_Store

@@ -14,7 +14,7 @@ def insert_hobby_into_database(name, hobby):
 
 def add_hobby_if_person_exists(name, hobby):
     """Controleert of de persoon bestaat en voegt de hobby toe indien mogelijk."""
-    if person_exists(name):
+    if not person_exists(name):
         print("Persoon niet gevonden in database.")
     elif len(hobby) > 75:
         print("Hobbynaam is te lang, maximaal 75 karakters zijn toegestaan.")

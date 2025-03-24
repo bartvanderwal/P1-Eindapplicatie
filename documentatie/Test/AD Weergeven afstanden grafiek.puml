@@ -1,0 +1,10 @@
+@startuml
+
+start  
+:Docent selecteert optie om grafiek te bekijken;  
+:Docent kiest grafiek optie;
+:Systeem haalt afstanden van studenten op uit database;  
+:De gekozen grafiek wordt weergegeven;  
+stop  
+
+@enduml

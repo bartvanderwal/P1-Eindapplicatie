@@ -1,12 +1,12 @@
 @startuml
 entity "Person" {
-  * name : TEXT <<PK>>
+  * name : CHAR(50) <<PK>>
   * distance : REAL
 }
 
 entity "Hobby" {
-  * name : TEXT <<PK,FK>>
-  * hobby : TEXT <<PK>>
+  * name : CHAR(50) <<PK,FK>>
+  * hobby : CHAR(75) <<PK>>
 }
 
 Person ||--o{ Hobby : heeft

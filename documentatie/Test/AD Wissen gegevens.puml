@@ -1,0 +1,9 @@
+@startuml
+
+start  
+:Docent selecteert optie om alle gegevens te verwijderen;
+:Systeem wist alle gegevens uit de database;  
+:Bevestiging weergeven van succesvolle verwijdering;  
+stop  
+
+@enduml

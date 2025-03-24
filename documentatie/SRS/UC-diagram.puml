@@ -1,0 +1,20 @@
+@startuml  
+left to right direction  
+skinparam packageStyle rectangle  
+  
+actor Gebruiker  
+rectangle "Interactie met Database" {  
+  usecase "Gegevens uit CSV lezen" as UC1  
+  usecase "Persoonsgegevens opslaan" as UC2  
+  usecase "Hobby's beheren" as UC3  
+  usecase "Grafieken genereren" as UC4  
+  usecase "Database legen" as UC5  
+  
+  Gebruiker --> UC1  
+  Gebruiker --> UC2  
+  Gebruiker --> UC3  
+  Gebruiker --> UC4  
+  Gebruiker --> UC5  
+}  
+@enduml  
+ 

@@ -1,1 +1,76 @@
-TODO Jasper/Sjarl
+DROP VOORBEREIDING INTERVIEW MET DE STAKEHOLDER - DOCENT HOGESCHOOL
+
+D (DOELEN) > WAAROM?
+
+Van mij/ons:
+
+•	Het doel van dit interview is om inzicht te krijgen in de wensen en behoeften voor een applicatie die gegevens over studenten (zoals woonafstand en hobby’s) kan vastleggen en beheren.
+•	We willen een duidelijk beeld krijgen van de gewenste functionaliteiten, het gebruiksgemak en de privacyvereisten.
+•	Het interview moet resulteren in concrete input voor het ontwerp en de ontwikkeling van de applicatie.
+•	We zijn tevreden als we een helder beeld hebben van de belangrijkste eisen en wensen van de stakeholder.
+
+Van de ander:
+
+•	De stakeholder is een docent ICT aan de Hogeschool Arnhem Nijmegen.
+•	Hij wil een efficiënte manier om studentengegevens te beheren, vooral om studenten beter te leren kennen en de lessen daarop af te stemmen.
+•	De applicatie moet hem tijd besparen en een duidelijk overzicht bieden.
+•	Hij is tevreden als de applicatie eenvoudig werkt en aansluit op zijn behoeften.
+
+R (ROLLEN) > WIE?
+
+•	Het interview wordt afgenomen door meerdere studenten met verdeelde rollen:
+o	Voorzitter: Eén student leidt het gesprek en zorgt ervoor dat de structuur wordt bewaakt.
+o	Notulist: Een student noteert de antwoorden en belangrijke punten.
+o	Vragenstellers: Een of meer studenten stellen de vragen aan de geïnterviewde.
+•	De geïnterviewde is Jan Jansen, een docent ICT.
+•	De docent geeft zijn visie, wensen en eisen met betrekking tot de applicatie.
+•	De docent heeft inhoudelijke expertise over het probleem en is de eindgebruiker van de applicatie.
+•	We houden rekening met de voorkennis van de docent: hij werkt al met Excel, maar wil een effectiever systeem.
+
+O (ONDERWERPEN) > WAT?
+
+Introductie
+
+•	Voorstellen en toelichting op de rol binnen de hogeschool.
+•	Motivatie voor de ontwikkeling van de applicatie.
+
+Huidige situatie
+
+•	Hoe worden studentengegevens momenteel beheerd?
+•	Welke uitdagingen ondervindt de docent?
+
+Wensen en functionaliteiten
+
+•	Welke gegevens moeten worden vastgelegd?
+•	Moet de woonafstand automatisch worden berekend?
+•	Vrije invuloptie of categorieën voor hobby’s?
+•	Moeten studenten zelf gegevens invoeren?
+
+Gebruik en interactie
+
+•	Hoe vaak zal de applicatie worden gebruikt?
+•	Zijn zoek- en filtermogelijkheden gewenst?
+•	Moeten studenten elkaars gegevens kunnen zien?
+
+Beheer en onderhoud
+
+•	Wie mag gegevens aanpassen?
+•	Zijn er specifieke privacy- en beveiligingseisen?
+
+Toekomstige uitbreidingen
+
+•	Zijn er extra functionaliteiten gewenst in de toekomst?
+
+Afronding
+
+•	Zijn er bestaande systemen die als inspiratie kunnen dienen?
+•	Wat zou een succesvolle applicatie zijn voor de docent?
+•	Bedank de stakeholder voor hun tijd en input. Geef aan wat de volgende stappen in het ontwikkelproces zijn. En deel de praktische vervolgstappen: delen verslag ter goedkeuring. Bespreek de mogelijkheid om contact op te nemen bij eventuele onduidelijkheden in later stadium. 
+P (PROCEDURES) > HOE?
+
+•	Locatie: Het interview vindt plaats op de HAN in een rustige ruimte.
+•	Duur: Geschat op 30 minuten.
+•	Gespreksvoering: Gestructureerd interview met open vragen.
+•	Hulpmiddelen: Notitieblok of laptop voor verslaglegging.
+•	Gesprekstechnieken: Actief luisteren, samenvatten, doorvragen op belangrijke punten.
+ 

@@ -1,4 +1,4 @@
-DROP VOORBEREIDING INTERVIEW MET DE STAKEHOLDER - DOCENT HOGESCHOOL
+DROP-VOORBEREIDING INTERVIEW MET DE STAKEHOLDER - DOCENT HOGESCHOOL
 
 D (DOELEN) > WAAROM?
 
@@ -77,7 +77,7 @@ P (PROCEDURES) > HOE?
 VERSLAG INTERVIEW MET DE STAKEHOLDER - DOCENT HOGESCHOOL
 
 Datum: Maandag 24 Maart 2025
-Aanwezig: Jan Janssen (docent), Pietje puk (student)
+Aanwezig: Jan Janssen (docent), Marietje Puk (student)
 Locatie: HAN 
 
 Introductie

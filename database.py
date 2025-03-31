@@ -12,7 +12,7 @@ def connect_to_database():
                      )''')
     cursor.execute('''CREATE TABLE IF NOT EXISTS hobby (
                         name VARCHAR(50), 
-                        hobby VARCHAR(50), 
+                        hobby VARCHAR(75), 
                         PRIMARY KEY(name, hobby), 
                         FOREIGN KEY(name) REFERENCES person(name)
                      )''')

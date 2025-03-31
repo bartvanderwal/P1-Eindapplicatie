@@ -9,8 +9,8 @@ entity person {
 }
 
 entity hobby {
-    name : VARCHAR(50) <<PK,FK>>
-    hobby : VARCHAR(75) <<PK>>
+    *name : CHAR(50) <<PK,FK>>
+    *hobby : CHAR(75) <<PK>>
 }
 
 person <- hobby

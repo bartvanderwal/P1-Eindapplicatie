@@ -32,7 +32,7 @@ def create_vertical_distance_bar_chart(max_bar_width, character):
     for row in rows:
         name = row[0]
         distance = row[1]
-        bar_length = int(max_bar_width * distance / max_distance) # misschien te ingewikkeld?
+        bar_length = int(round(max_bar_width * distance / max_distance)) # misschien te ingewikkeld?
         print(name, end='')
         for _ in range(0, length_of_longest_name - len(name)):
             print(' ', end='')

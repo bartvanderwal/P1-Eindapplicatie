@@ -1,1 +1,165 @@
-TODO Jasper/Sjarl
+DROP VOORBEREIDING INTERVIEW MET DE STAKEHOLDER - DOCENT HOGESCHOOL
+
+D (DOELEN) > WAAROM?
+
+Van mij/ons:
+
+•	Het doel van dit interview is om inzicht te krijgen in de wensen en behoeften voor een applicatie die gegevens over studenten (zoals woonafstand en hobby’s) kan vastleggen en beheren.
+•	We willen een duidelijk beeld krijgen van de gewenste functionaliteiten, het gebruiksgemak en de privacyvereisten.
+•	Het interview moet resulteren in concrete input voor het ontwerp en de ontwikkeling van de applicatie.
+•	We zijn tevreden als we een helder beeld hebben van de belangrijkste eisen en wensen van de stakeholder.
+
+Van de ander:
+
+•	De stakeholder is een docent ICT aan de Hogeschool Arnhem Nijmegen.
+•	Hij wil een efficiënte manier om studentengegevens te beheren, vooral om studenten beter te leren kennen en de lessen daarop af te stemmen.
+•	De applicatie moet hem tijd besparen en een duidelijk overzicht bieden.
+•	Hij is tevreden als de applicatie eenvoudig werkt en aansluit op zijn behoeften.
+
+R (ROLLEN) > WIE?
+
+•	Het interview wordt afgenomen door meerdere studenten met verdeelde rollen:
+o	Voorzitter: Eén student leidt het gesprek en zorgt ervoor dat de structuur wordt bewaakt.
+o	Notulist: Een student noteert de antwoorden en belangrijke punten.
+o	Vragenstellers: Een of meer studenten stellen de vragen aan de geïnterviewde.
+•	De geïnterviewde is Jan Jansen, een docent ICT.
+•	De docent geeft zijn visie, wensen en eisen met betrekking tot de applicatie.
+•	De docent heeft inhoudelijke expertise over het probleem en is de eindgebruiker van de applicatie.
+•	We houden rekening met de voorkennis van de docent: hij werkt al met Excel, maar wil een effectiever systeem.
+
+O (ONDERWERPEN) > WAT?
+
+Introductie
+
+•	Voorstellen en toelichting op de rol binnen de hogeschool.
+•	Motivatie voor de ontwikkeling van de applicatie.
+
+Huidige situatie
+
+•	Hoe worden studentengegevens momenteel beheerd?
+•	Welke uitdagingen ondervindt de docent?
+
+Wensen en functionaliteiten
+
+•	Welke gegevens moeten worden vastgelegd?
+•	Moet de woonafstand automatisch worden berekend?
+•	Vrije invuloptie of categorieën voor hobby’s?
+•	Moeten studenten zelf gegevens invoeren?
+
+Gebruik en interactie
+
+•	Hoe vaak zal de applicatie worden gebruikt?
+•	Zijn zoek- en filtermogelijkheden gewenst?
+•	Moeten studenten elkaars gegevens kunnen zien?
+
+Beheer en onderhoud
+
+•	Wie mag gegevens aanpassen?
+•	Zijn er specifieke privacy- en beveiligingseisen?
+
+Toekomstige uitbreidingen
+
+•	Zijn er extra functionaliteiten gewenst in de toekomst?
+
+Afronding
+
+•	Zijn er bestaande systemen die als inspiratie kunnen dienen?
+•	Wat zou een succesvolle applicatie zijn voor de docent?
+•	Bedank de stakeholder voor hun tijd en input. Geef aan wat de volgende stappen in het ontwikkelproces zijn. En deel de praktische vervolgstappen: delen verslag ter goedkeuring. Bespreek de mogelijkheid om contact op te nemen bij eventuele onduidelijkheden in later stadium. 
+P (PROCEDURES) > HOE?
+
+•	Locatie: Het interview vindt plaats op de HAN in een rustige ruimte.
+•	Duur: Geschat op 30 minuten.
+•	Gespreksvoering: Gestructureerd interview met open vragen.
+•	Hulpmiddelen: Notitieblok of laptop voor verslaglegging.
+•	Gesprekstechnieken: Actief luisteren, samenvatten, doorvragen op belangrijke punten.
+
+VERSLAG INTERVIEW MET DE STAKEHOLDER - DOCENT HOGESCHOOL
+
+Datum: Maandag 24 Maart 2025
+Aanwezig: Jan Janssen (docent), Pietje puk (student)
+Locatie: HAN 
+
+Introductie
+
+	•	Kunt u uzelf kort voorstellen en uw rol binnen de hogeschool toelichten?
+
+Mijn naam is Jan Jansen en ik ben docent ICT aan de Hogeschool Arnhem Nijmegen. Ik geef les aan eerste- en tweedejaarsstudenten en begeleid daarnaast enkele projectgroepen.
+
+	•	Wat is uw motivatie voor het ontwikkelen van deze applicatie?
+
+Ik merk dat het lastig is om een goed beeld te krijgen van de interesses en achtergrond van mijn studenten. Als ik weet waar ze wonen en wat hun hobby’s zijn, kan ik ze persoonlijker benaderen en beter begrijpen waarom bepaalde studenten bijvoorbeeld moeite hebben om op tijd te komen of niet goed integreren in de groep. Ook kan ik betere voorbeelden geven die aansluiten op hun de dingen die ze leuk vinden.
+
+Huidige situatie
+
+	•	Hoe verzamelt u momenteel informatie over de studenten?
+
+Momenteel houd ik dat handmatig bij in een Excel-bestand. Studenten vullen een formulier in op papier en ik typ dat vervolgens over. Dit is omslachtig en foutgevoelig.
+
+	•	Welke uitdagingen ervaart u daarbij?
+
+Het handmatig invoeren kost veel tijd en gegevens raken soms verouderd zonder dat ik het weet. Daarnaast is het moeilijk om studenten snel te vinden op basis van bepaalde kenmerken, zoals wie in dezelfde buurt woont of dezelfde hobby’s heeft.
+
+Wensen en functionaliteiten
+
+	•	Wat zijn de belangrijkste gegevens die u per student wilt vastleggen?
+
+De naam, woonplaats, en enkele hobby’s. De exacte straatnaam is niet nodig, maar ik wil wel weten hoe ver een student ongeveer van school woont. Deze informatie krijg ik ook van de HAN in een csv bestand. Het zou fijn zijn als ik die kan inlezen.
+
+	•	Hoe belangrijk is het dat de woonafstand automatisch wordt berekend?
+
+Dat hoeft niet echt. Deze informatie krijg van de HAN. Ik zou er wel graag een overzicht van hebben om in te kunnen schatten hoever een student moet reizen. Ook zou ik graag een wijziging kunnen aanbrengen voor als iemand verhuisd.
+
+	•	Wilt u specifieke categorieën voor hobby’s of een vrije invuloptie?
+
+Een vrije invuloptie lijkt me prima om mee te beginnen. Wie weet dat ik daar later nog op terug kom. Een student kan natuurlijk meerdere hobby’s hebben en die wil ik allemaal kunnen registreren. Ook wil ik een hobby van een student kunnen verwijderen, in het geval iemand met een hobby gestopt is.
+Ook wil ik een lijst kunnen printen, zodat ik een overzicht kan gebruiken tijdens mijn lessen.
+
+	•	Wilt u dat studenten zelf hun gegevens kunnen invoeren of alleen dat u dit als docent beheert?
+
+Ik wil er graag zelf mee aan de slag. De studenten hoeven dit zelf niet in te kunnen voeren, en deze informatie is ook niet bedoeld om te delen. Ik moet de alle gegevens ook kunnen wissen om te kunnen voldoen aan de AVG wet.
+
+Gebruik en interactie
+
+	•	Hoe vaak verwacht u deze applicatie te gebruiken?
+
+Waarschijnlijk wekelijks, vooral aan het begin van een nieuw semester om mijn groepen goed te leren kennen.
+
+	•	Wilt u zoek- en filtermogelijkheden om snel studenten te vinden op basis van afstand of hobby’s?
+
+Dat hoeft op zich niet als ik maar een lijst van met de studenten en hun hobby’s kan afdrukken, zodat ik kan zien wie er dezelfde hobby heeft. Voor de afstanden zie ik liever iets op het scherm, een grafiekje of iets wat de afstand duidelijk maakt.
+
+	•	Wilt u dat studenten elkaar via de applicatie kunnen bekijken en hun hobby’s kunnen vergelijken?
+
+Nee, dat is op dit moment niet nodig. 
+
+Beheer en onderhoud
+
+	•	Wie zou de gegevens moeten kunnen aanpassen (alleen u, ook studenten, etc.)?
+
+Studenten kunnen mij de informatie doorgeven via een mailtje. Ik wil wel de mogelijkheid hebben om alles in te zien en eventueel wijzigingen te controleren of onjuiste informatie te corrigeren.
+
+	•	Heeft u specifieke wensen met betrekking tot privacy en beveiliging?
+
+Ja, in zoverre dat het uitsluitend op mijn pc komt te staan, zodat ik zelf het beheer heb.
+
+Toekomstige uitbreidingen
+
+	•	Zijn er nog andere functionaliteiten die u in de toekomst zou willen toevoegen?
+
+Misschien een functie waarmee ik eenvoudig notities per student kan toevoegen. Bijvoorbeeld als een student moeite heeft met bepaalde vakken of als ik iets belangrijks over hun persoonlijke situatie moet onthouden. Maar dit mag je voor nu nog even vergeten. Eerst maar de registratie.
+
+Afronding
+	•	Zijn er specifieke voorbeelden van systemen of tools die u prettig vindt en als inspiratie kunnen dienen?
+
+Niet echt. Hou het vooral simpel.
+
+	•	Wat zou voor u een succesvolle applicatie betekenen?
+
+Als ik zonder gedoe kan zien wat de reisafstand van mijn studenten is en welke hobby’s ze hebben.
+
+Afsluiting:
+
+Bedankt voor uw tijd en waardevolle input. We gaan nu aan de slag met een conceptontwerp en komen binnenkort bij u terug voor feedback.
+
+

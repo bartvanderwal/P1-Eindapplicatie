@@ -6,5 +6,6 @@ package "P1 Eindapplicatie" {
   [Klaskompas] --> [Visualisation]
   [Person Management] --> [Database]
   [Hobby Management] --> [Database]
+  [Visualisation] --> [Database]
 }
 @enduml

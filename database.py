@@ -6,8 +6,8 @@ def connect_to_database():
     conn = sqlite3.connect('data.db')
     cursor = conn.cursor()
     # voor het geval dit de eerste keer is, anders doen de statements niets
-    cursor.execute('CREATE TABLE IF NOT EXISTS person (name TEXT, afstand REAL)')
-    cursor.execute('CREATE TABLE IF NOT EXISTS hobby (name TEXT, hobby TEXT)')
+    cursor.execute('CREATE TABLE IF NOT EXISTS person (name TEXT, afstand REAL, PRIMARY KEY(name))')
+    cursor.execute('CREATE TABLE IF NOT EXISTS hobby (name TEXT, hobby TEXT, PRIMARY KEY(name, hobby), FOREIGN KEY(name) REFERENCES person(name))')
     return cursor
 
 def disconnect_from_database(db):

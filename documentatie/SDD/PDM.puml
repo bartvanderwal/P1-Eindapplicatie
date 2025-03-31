@@ -1,16 +1,16 @@
 @startuml KlasKompas_PDM
 'configuration
 hide circle
-hide methods
+hide attributes
 
 entity person {
-    name: CHAR(50) <<PK>>
-    distance: NUMERIC(3,1)
+    *name : CHAR(50) <<PK>>
+    *distance : NUMERIC(3,1)
 }
 
 entity hobby {
-    name: CHAR(50) <<PK,FK>>
-    hobby: CHAR(75) <<PK>>
+    *name : CHAR(50) <<PK,FK>>
+    *hobby : CHAR(75) <<PK>>
 }
 
 person <- hobby

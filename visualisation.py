@@ -5,7 +5,7 @@ from database import connect_to_database, disconnect_from_database
 def create_distance_bar_chart():
     """Functie om data uit database te halen en als grafiek te tonen"""
     db = connect_to_database()
-    db.execute('SELECT name, afstand FROM person')
+    db.execute('SELECT name, distance FROM person')
     rows = db.fetchall()
 
     names = [row[0] for row in rows]  # misschien te shorthand voor P1
@@ -22,7 +22,7 @@ def create_distance_bar_chart():
 def create_vertical_distance_bar_chart(max_bar_width, character):
     """Functie om data uit database te halen en als grafiek te tonen met ASCII-art"""
     db = connect_to_database()
-    db.execute('SELECT name, afstand FROM person')
+    db.execute('SELECT name, distance FROM person')
     rows = db.fetchall()
 
     max_distance = max([row[1] for row in rows]) # eventueel zelf uitprogrammeren

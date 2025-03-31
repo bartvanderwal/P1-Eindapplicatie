@@ -4,13 +4,13 @@ hide circle
 hide attributes
 
 entity person {
-    *name : CHAR(50) <<PK>>
-    *distance : NUMERIC(3,1)
+    name : VARCHAR(50) <<PK>>
+    distance : NUMERIC(3,1)
 }
 
 entity hobby {
-    *name : CHAR(50) <<PK,FK>>
-    *hobby : CHAR(75) <<PK>>
+    name : VARCHAR(50) <<PK,FK>>
+    hobby : VARCHAR(75) <<PK>>
 }
 
 person <- hobby

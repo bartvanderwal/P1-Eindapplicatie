@@ -14,7 +14,7 @@ def import_persons_to_database():
     save_person_to_database(data)
 
 def save_person_to_database(data):
-    """Functie om persoonsdata (naam, afstand) in SQLite-database op te slaan"""
+    """Functie om persoonsdata (naam, distance) in SQLite-database op te slaan"""
     db = connect_to_database()
 
     for row in data:

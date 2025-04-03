@@ -1,2 +1,2 @@
 source .env/bin/activate
-python3 klaskompas.py
+python3 src/klaskompas.py

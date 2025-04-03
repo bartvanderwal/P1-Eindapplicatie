@@ -5,7 +5,7 @@ def haal_databaseverbinding_op():
     '''Functie om verbinding te maken met database'''
 
     # isolation_level=None zorgt ervoor dat de database in autocommit mode is
-    connectie = sqlite3.connect('data.db', isolation_level=None)
+    connectie = sqlite3.connect('db/data.db', isolation_level=None)
         
     # feitelijk gebruiken we een cursor, maar we gebruiken het als een databaseverbinding
     db = connectie.cursor()

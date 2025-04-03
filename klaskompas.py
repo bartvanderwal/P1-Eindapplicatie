@@ -14,13 +14,13 @@
 # - Wat meer complexiteit in parameters en return values zou goed zijn, daar
 #   moeten ze mee oefenen.
 """UI component (en startpunt) van de Eindapplicatie voor P1"""
-from person_management import import_persons_to_database, \
-    update_distance_in_database, delete_persons_from_database
-from hobby_management import add_hobby_if_person_exists, \
-    remove_hobby_if_exists, \
-    print_hobbies_from_database
-from visualisation import create_distance_bar_chart, \
-    create_vertical_distance_bar_chart
+from person_management import importeer_personen_in_database, \
+    wijzig_afstand_in_database, verwijder_alle_personen_uit_database
+from hobby_management import voeg_hobby_toe_aan_database_als_persoon_aanwezig, \
+    verwijder_hobby_uit_database_indien_aanwezig, \
+    print_hobbys_aanwezig_in_database
+from visualisation import toon_verticaal_staafdiagram, \
+    toon_horizontaal_staafdiagram
 
 def main():
     """Startpunt van de applicatie"""
@@ -35,37 +35,37 @@ def main():
         print("7. Leeg database (alle data verwijderen)")
         print("8. Stop")
 
-        choice = input("Kies een optie: ")
+        keuze = input("Kies een optie: ")
 
-        if choice == '1':
-            import_persons_to_database()
-        elif choice == '2':
-            name = input("Voer naam in: ")
+        if keuze == '1':
+            importeer_personen_in_database()
+        elif keuze == '2':
+            naam = input("Voer naam in: ")
             hobby = input("Voer hobby in: ")
-            add_hobby_if_person_exists(name, hobby)
-        elif choice == '3':
-            name = input("Voer naam in van de persoon die u wilt bijwerken: ")
-            new_distance = float(input("Voer nieuwe afstand in: "))
-            update_distance_in_database(name, new_distance)
-        elif choice == '4':
-            name = input("Voer naam in van record dat u wilt verwijderen: ")
+            voeg_hobby_toe_aan_database_als_persoon_aanwezig(naam, hobby)
+        elif keuze == '3':
+            naam = input("Voer naam in van de persoon die u wilt bijwerken: ")
+            nieuwe_afstand = float(input("Voer nieuwe afstand in: "))
+            wijzig_afstand_in_database(naam, nieuwe_afstand)
+        elif keuze == '4':
+            naam = input("Voer naam in van record dat u wilt verwijderen: ")
             hobby = input("Voer hobby in van record dat u wilt verwijderen: ")
-            remove_hobby_if_exists(name, hobby)
-        elif choice == '5':
-            subchoice = input("Wilt u een verticale (1) of horizontale (2) grafiek? ")
-            if subchoice == '1':
-                create_distance_bar_chart()
-            elif subchoice == '2':
-                max_bar_length = int(input("Voer maximale lengte van balk in: "))
-                character = input("Voer karakter in voor de grafiek (bijv. * of #): ")
-                create_vertical_distance_bar_chart(max_bar_length, character)
+            verwijder_hobby_uit_database_indien_aanwezig(naam, hobby)
+        elif keuze == '5':
+            subkeuze = input("Wilt u een verticale (1) of horizontale (2) grafiek? ")
+            if subkeuze == '1':
+                toon_verticaal_staafdiagram()
+            elif subkeuze == '2':
+                maximum_staaflengte = int(input("Voer maximale lengte van balk in: "))
+                karakter = input("Voer karakter in voor de grafiek (bijv. * of #): ")
+                toon_horizontaal_staafdiagram(maximum_staaflengte, karakter)
             else:
                 print("Ongeldige keuze. Probeer opnieuw.")
-        elif choice == '6':
-            print_hobbies_from_database()
-        elif choice == '7':
-            delete_persons_from_database()
-        elif choice == '8':
+        elif keuze == '6':
+            print_hobbys_aanwezig_in_database()
+        elif keuze == '7':
+            verwijder_alle_personen_uit_database()
+        elif keuze == '8':
             break
         else:
             print("Ongeldige keuze. Probeer opnieuw.")

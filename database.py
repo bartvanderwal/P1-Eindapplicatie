@@ -1,42 +1,44 @@
 """Database component voor Eindapplicatie voor P1"""
 import sqlite3
 
-def connect_to_database():
+def haal_databaseverbinding_op():
     """Functie om verbinding te maken met database"""
 
     # isolation_level=None zorgt ervoor dat de database in autocommit mode is
-    conn = sqlite3.connect('data.db', isolation_level=None)
-    
-    cursor = conn.cursor()
-    # voor het geval dit de eerste keer is, anders doen de statements niets
-    cursor.execute('''CREATE TABLE IF NOT EXISTS person (
-                        name VARCHAR(50) PRIMARY KEY, 
-                        distance NUMERIC(3,1)
-                     )''')
-    cursor.execute('''CREATE TABLE IF NOT EXISTS hobby (
-                        name VARCHAR(50), 
-                        hobby VARCHAR(75), 
-                        PRIMARY KEY(name, hobby), 
-                        FOREIGN KEY(name) REFERENCES person(name)
-                     )''')
-    return cursor
+    connectie = sqlite3.connect('data.db', isolation_level=None)
+        
+    # feitelijk gebruiken we een cursor, maar we gebruiken het als een databaseverbinding
+    db = connectie.cursor()
 
-def disconnect_from_database(db):
+    # voor het geval dit de eerste keer is, anders doen de statements niets
+    db.execute('''CREATE TABLE IF NOT EXISTS persoon (
+                        naam VARCHAR(50) PRIMARY KEY, 
+                        afstand NUMERIC(3,1)
+                     )''')
+    db.execute('''CREATE TABLE IF NOT EXISTS hobby (
+                        naam VARCHAR(50), 
+                        hobby VARCHAR(75), 
+                        PRIMARY KEY(naam, hobby), 
+                        FOREIGN KEY(naam) REFERENCES persoon(naam)
+                     )''')
+    return db
+
+def verbreek_verbinding_met_database(db):
     """Functie om verbinding met database te verbreken"""
     db.close()
 
-def person_exists_in_database(name):
+def persoon_aanwezig_in_database(naam):
     """Functie om  te controleren of persoon in de database bestaat"""
-    db = connect_to_database()
-    db.execute('SELECT name FROM person WHERE name = ?', (name,))
+    db = haal_databaseverbinding_op()
+    db.execute('SELECT naam FROM persoon WHERE naam = ?', (naam,))
     row = db.fetchone()
-    disconnect_from_database(db)
+    verbreek_verbinding_met_database(db)
     return row is not None
 
-def person_with_hobby_exists_in_database(name, hobby):
+def persoon_hobby_combinatie_aanwezig_in_database(naam, hobby):
     """Functie om te controleren of persoon met hobby in de database bestaat"""
-    db = connect_to_database()
-    db.execute('SELECT name FROM hobby WHERE name = ? and hobby = ?', (name, hobby))
+    db = haal_databaseverbinding_op()
+    db.execute('SELECT naam FROM hobby WHERE naam = ? and hobby = ?', (naam, hobby))
     row = db.fetchone()
-    disconnect_from_database(db)
+    verbreek_verbinding_met_database(db)
     return row is not None

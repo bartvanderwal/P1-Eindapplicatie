@@ -1,51 +1,53 @@
 """Hobby Management component van de P1 Eindapplicatie"""
-from database import person_exists_in_database, person_with_hobby_exists_in_database, \
-    connect_to_database, disconnect_from_database
+from database import persoon_aanwezig_in_database, persoon_hobby_combinatie_aanwezig_in_database, \
+    haal_databaseverbinding_op, verbreek_verbinding_met_database
 
-def person_exists(name):
-    """Controleert of een persoon in de database bestaat."""
-    return person_exists_in_database(name)
-
-def insert_hobby_into_database(name, hobby):
+def voeg_hobby_toe_aan_database(naam, hobby):
     """Voegt een hobby toe aan de database zonder controles."""
-    db = connect_to_database()
-    db.execute('INSERT INTO hobby VALUES (?, ?)', (name, hobby))
-    disconnect_from_database(db)
+    db = haal_databaseverbinding_op()
+    db.execute('INSERT INTO hobby VALUES (?, ?)', (naam, hobby))
+    verbreek_verbinding_met_database(db)
 
-def add_hobby_if_person_exists(name, hobby):
+def voeg_hobby_toe_aan_database_als_persoon_aanwezig(naam, hobby):
     """Controleert of de persoon bestaat en voegt de hobby toe indien mogelijk."""
-    if not person_exists(name):
+    if not persoon_aanwezig_in_database(naam):
         print("Persoon niet gevonden in database.")
     elif len(hobby) > 75:
         print("Hobbynaam is te lang, maximaal 75 karakters zijn toegestaan.")
     else:
-        insert_hobby_into_database(name, hobby)
+        voeg_hobby_toe_aan_database(naam, hobby)
         print("Hobby toegevoegd aan database.")
 
-def delete_hobby_from_database(name, hobby):
+def verwijder_hobby_uit_database(naam, hobby):
     """Functie om record te verwijderen uit database"""
-    db = connect_to_database()
-    db.execute('DELETE FROM hobby WHERE name = ? and hobby = ?', (name, hobby))
-    disconnect_from_database(db)
-    print("Combinatie persoon en hobby verwijderd uit database.")
+    db = haal_databaseverbinding_op()
+    db.execute('DELETE FROM hobby WHERE naam = ? and hobby = ?', (naam, hobby))
+    verbreek_verbinding_met_database(db)
 
-def remove_hobby_if_exists(name, hobby):
+def verwijder_hobby_uit_database_indien_aanwezig(naam, hobby):
     """Controleert of een persoon de hobby heeft en verwijdert deze indien nodig."""
-    if person_with_hobby_exists_in_database(name, hobby):
-        delete_hobby_from_database(name, hobby)
+    if persoon_hobby_combinatie_aanwezig_in_database(naam, hobby):
+        verwijder_hobby_uit_database(naam, hobby)
         print("Combinatie persoon en hobby verwijderd uit database.")
     else:
         print("Combinatie van persoon en hobby niet gevonden in database.")
 
-def print_hobbies_from_database():
+def print_hobbys_aanwezig_in_database():
     """Functie om data uit database te halen en te printen"""
-    db = connect_to_database()
-    db.execute('SELECT name, hobby FROM hobby ORDER BY name')
-    rows = db.fetchall()
+    db = haal_databaseverbinding_op()
+    db.execute('SELECT naam, hobby FROM hobby ORDER BY naam')
+    rijen = db.fetchall()
 
-    for row in rows:
-        name = row[0]
-        hobby = row[1]
-        print(name, hobby)
+    for rij in rijen:
+        naam = rij[0]
+        hobby = rij[1]
+        print(naam, hobby)
 
-    disconnect_from_database(db)
+    verbreek_verbinding_met_database(db)
+
+def verwijder_alle_hobbys_uit_database():
+    """Functie om alle hobby's uit de database te verwijderen"""
+    db = haal_databaseverbinding_op()
+    db.execute('DELETE FROM hobby')
+    verbreek_verbinding_met_database(db)
+    print("Alle hobby's verwijderd uit database.")

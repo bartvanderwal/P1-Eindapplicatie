@@ -5,7 +5,7 @@ from database import person_exists_in_database, connect_to_database, disconnect_
 
 def import_persons_to_database():
     """Functie om data uit CSV-bestand te lezen"""
-    data = []
+    data = list()
     #utf-8 encoding eigenlijk toevoegen, is dat iets voor P1?
     with open('data/data.csv', 'r') as file:
         csv_reader = csv.reader(file)

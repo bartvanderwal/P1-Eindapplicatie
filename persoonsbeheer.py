@@ -2,7 +2,7 @@
 
 import csv
 import database
-import hobby_management
+import hobbybeheer
 
 def importeer_personen_in_database():
     """Functie om data uit CSV-bestand te lezen"""
@@ -43,7 +43,7 @@ def wijzig_afstand_in_database(naam, nieuwe_afstand):
 def verwijder_alle_personen_uit_database():
     """Functie om database te legen"""
     db = database.haal_databaseverbinding_op()
-    hobby_management.verwijder_alle_hobbys_uit_database()
+    hobbybeheer.verwijder_alle_hobbys_uit_database()
     db.execute('DELETE FROM persoon')
     database.verbreek_verbinding_met_database(db)
     print("Database geleegd.")

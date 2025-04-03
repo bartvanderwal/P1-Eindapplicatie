@@ -1,4 +1,4 @@
-"""Visualisation component voor de P1 Eindapplicatie"""
+"""Visualisatie-component voor de P1 Eindapplicatie"""
 import matplotlib.pyplot as plt
 import database
 
@@ -9,10 +9,10 @@ def toon_verticaal_staafdiagram():
     rijen = db.fetchall()
 
     namen = [rij[0] for rij in rijen]  # misschien te shorthand voor P1
-    distances = [rij[1] for rij in rijen]
+    afstanden = [rij[1] for rij in rijen]
     database.verbreek_verbinding_met_database(db)
 
-    plt.bar(namen, distances)
+    plt.bar(namen, afstanden)
     plt.xlabel('Naam')
     plt.xticks(rotation=45)
     plt.ylabel('Afstand')

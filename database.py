@@ -3,7 +3,10 @@ import sqlite3
 
 def connect_to_database():
     """Functie om verbinding te maken met database"""
-    conn = sqlite3.connect('data.db')
+
+    # isolation_level=None zorgt ervoor dat de database in autocommit mode is
+    conn = sqlite3.connect('data.db', isolation_level=None)
+    
     cursor = conn.cursor()
     # voor het geval dit de eerste keer is, anders doen de statements niets
     cursor.execute('''CREATE TABLE IF NOT EXISTS person (
@@ -19,8 +22,7 @@ def connect_to_database():
     return cursor
 
 def disconnect_from_database(db):
-    """Functie om verbinding met database te verbreken (inlusief commit)"""
-    db.connection.commit()
+    """Functie om verbinding met database te verbreken"""
     db.close()
 
 def person_exists_in_database(name):

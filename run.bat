@@ -1,1 +1,1 @@
-python klaskompas.py
+python src/klaskompas.py

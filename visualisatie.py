@@ -1,9 +1,9 @@
-"""Visualisatie-component voor de P1 Eindapplicatie"""
+'''Visualisatie-component voor de P1 Eindapplicatie'''
 import matplotlib.pyplot as plt
 import database
 
 def toon_verticaal_staafdiagram():
-    """Functie om data uit database te halen en als staafdiagram te tonen"""
+    '''Functie om data uit database te halen en als staafdiagram te tonen'''
     db = database.haal_databaseverbinding_op()
     db.execute('SELECT naam, afstand FROM persoon')
     rijen = db.fetchall()
@@ -20,7 +20,7 @@ def toon_verticaal_staafdiagram():
     plt.show()
 
 def toon_horizontaal_staafdiagram(maximale_staaflengte, karakter):
-    """Functie om data uit database te halen en als staafdiagram te tonen met ASCII-art"""
+    '''Functie om data uit database te halen en als staafdiagram te tonen met ASCII-art'''
     db = database.haal_databaseverbinding_op()
     db.execute('SELECT naam, afstand FROM persoon')
     rijen = db.fetchall()

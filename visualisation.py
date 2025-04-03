@@ -1,16 +1,16 @@
 """Visualisation component voor de P1 Eindapplicatie"""
 import matplotlib.pyplot as plt
-from database import haal_databaseverbinding_op, verbreek_verbinding_met_database
+import database
 
 def toon_verticaal_staafdiagram():
     """Functie om data uit database te halen en als staafdiagram te tonen"""
-    db = haal_databaseverbinding_op()
+    db = database.haal_databaseverbinding_op()
     db.execute('SELECT naam, afstand FROM persoon')
     rijen = db.fetchall()
 
     namen = [rij[0] for rij in rijen]  # misschien te shorthand voor P1
     distances = [rij[1] for rij in rijen]
-    verbreek_verbinding_met_database(db)
+    database.verbreek_verbinding_met_database(db)
 
     plt.bar(namen, distances)
     plt.xlabel('Naam')
@@ -21,7 +21,7 @@ def toon_verticaal_staafdiagram():
 
 def toon_horizontaal_staafdiagram(maximale_staaflengte, karakter):
     """Functie om data uit database te halen en als staafdiagram te tonen met ASCII-art"""
-    db = haal_databaseverbinding_op()
+    db = database.haal_databaseverbinding_op()
     db.execute('SELECT naam, afstand FROM persoon')
     rijen = db.fetchall()
 
@@ -32,11 +32,11 @@ def toon_horizontaal_staafdiagram(maximale_staaflengte, karakter):
     for rij in rijen:
         naam = rij[0]
         afstand = rij[1]
-        staaflengte = round(maximale_staaflengte * afstand / grootste_afstand) # misschien te ingewikkeld?
+        staaflengte = round(maximale_staaflengte * afstand / grootste_afstand)
         print(naam, end='')
         for _ in range(0, lengte_van_langste_naam - len(naam)):
             print(' ', end='')
         print('|')
         print(karakter * staaflengte)
 
-    verbreek_verbinding_met_database(db)
+    database.verbreek_verbinding_met_database(db)

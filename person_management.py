@@ -1,9 +1,8 @@
 """CSV Import component voor Eindapplicatie voor P1"""
 
 import csv
-from database import persoon_aanwezig_in_database, haal_databaseverbinding_op, \
-    verbreek_verbinding_met_database
-from hobby_management import verwijder_alle_hobbys_uit_database
+import database
+import hobby_management
 
 def importeer_personen_in_database():
     """Functie om data uit CSV-bestand te lezen"""
@@ -17,34 +16,34 @@ def importeer_personen_in_database():
 
 def voeg_persoon_toe_aan_database(data):
     """Functie om persoonsdata (naam, distance) in SQLite-database op te slaan"""
-    db = haal_databaseverbinding_op()
+    db = database.haal_databaseverbinding_op()
 
     for rij in data:
         naam=rij[0]
         afstand=float(rij[1])
-        if persoon_aanwezig_in_database(naam):
+        if database.persoon_aanwezig_in_database(naam):
             print("Persoon " + naam + " bestaat al in database.")
         else:
             db.execute('INSERT INTO persoon VALUES (?, ?)', (naam, afstand))
 
-    verbreek_verbinding_met_database(db)
+    database.verbreek_verbinding_met_database(db)
 
 def wijzig_afstand_in_database(naam, nieuwe_afstand):
     """Functie om record bij te werken in database"""
-    if not persoon_aanwezig_in_database(naam):
+    if not database.persoon_aanwezig_in_database(naam):
         print("Persoon niet gevonden in database.")
     elif nieuwe_afstand < 0:
         print("Ongeldige waarde voor afstand.")
     else:
-        db = haal_databaseverbinding_op()
+        db = database.haal_databaseverbinding_op()
         db.execute('UPDATE persoon SET afstand = ? WHERE naam = ?', (nieuwe_afstand, naam))
-        verbreek_verbinding_met_database(db)
+        database.verbreek_verbinding_met_database(db)
         print("Afstand bijgewerkt in database.")
 
 def verwijder_alle_personen_uit_database():
     """Functie om database te legen"""
-    db = haal_databaseverbinding_op()
-    verwijder_alle_hobbys_uit_database()
+    db = database.haal_databaseverbinding_op()
+    hobby_management.verwijder_alle_hobbys_uit_database()
     db.execute('DELETE FROM persoon')
-    verbreek_verbinding_met_database(db)
+    database.verbreek_verbinding_met_database(db)
     print("Database geleegd.")

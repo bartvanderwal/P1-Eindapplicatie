@@ -14,13 +14,9 @@
 # - Wat meer complexiteit in parameters en return values zou goed zijn, daar
 #   moeten ze mee oefenen.
 """UI component (en startpunt) van de Eindapplicatie voor P1"""
-from person_management import importeer_personen_in_database, \
-    wijzig_afstand_in_database, verwijder_alle_personen_uit_database
-from hobby_management import voeg_hobby_toe_aan_database_als_persoon_aanwezig, \
-    verwijder_hobby_uit_database_indien_aanwezig, \
-    print_hobbys_aanwezig_in_database
-from visualisation import toon_verticaal_staafdiagram, \
-    toon_horizontaal_staafdiagram
+import person_management
+import hobby_management
+import visualisation
 
 def main():
     """Startpunt van de applicatie"""
@@ -38,33 +34,33 @@ def main():
         keuze = input("Kies een optie: ")
 
         if keuze == '1':
-            importeer_personen_in_database()
+            person_management.importeer_personen_in_database()
         elif keuze == '2':
             naam = input("Voer naam in: ")
             hobby = input("Voer hobby in: ")
-            voeg_hobby_toe_aan_database_als_persoon_aanwezig(naam, hobby)
+            hobby_management.voeg_hobby_toe_aan_database_als_persoon_aanwezig(naam, hobby)
         elif keuze == '3':
             naam = input("Voer naam in van de persoon die u wilt bijwerken: ")
             nieuwe_afstand = float(input("Voer nieuwe afstand in: "))
-            wijzig_afstand_in_database(naam, nieuwe_afstand)
+            person_management.wijzig_afstand_in_database(naam, nieuwe_afstand)
         elif keuze == '4':
             naam = input("Voer naam in van record dat u wilt verwijderen: ")
             hobby = input("Voer hobby in van record dat u wilt verwijderen: ")
-            verwijder_hobby_uit_database_indien_aanwezig(naam, hobby)
+            hobby_management.verwijder_hobby_uit_database_indien_aanwezig(naam, hobby)
         elif keuze == '5':
             subkeuze = input("Wilt u een verticale (1) of horizontale (2) grafiek? ")
             if subkeuze == '1':
-                toon_verticaal_staafdiagram()
+                visualisation.toon_verticaal_staafdiagram()
             elif subkeuze == '2':
                 maximum_staaflengte = int(input("Voer maximale lengte van balk in: "))
                 karakter = input("Voer karakter in voor de grafiek (bijv. * of #): ")
-                toon_horizontaal_staafdiagram(maximum_staaflengte, karakter)
+                visualisation.toon_horizontaal_staafdiagram(maximum_staaflengte, karakter)
             else:
                 print("Ongeldige keuze. Probeer opnieuw.")
         elif keuze == '6':
-            print_hobbys_aanwezig_in_database()
+            hobby_management.print_hobbys_aanwezig_in_database()
         elif keuze == '7':
-            verwijder_alle_personen_uit_database()
+            person_management.verwijder_alle_personen_uit_database()
         elif keuze == '8':
             break
         else:

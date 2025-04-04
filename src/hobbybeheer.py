@@ -43,9 +43,7 @@ def print_hobbys_aanwezig_in_database():
     db.execute('SELECT naam, hobby FROM hobby ORDER BY naam')
     rijen = db.fetchall()
 
-    for rij in rijen:
-        naam = rij[0]
-        hobby = rij[1]
+    for naam, hobby in rijen:
         print(naam, hobby)
 
     database.verbreek_verbinding_met_database(db)

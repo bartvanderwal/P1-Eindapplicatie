@@ -1,6 +1,7 @@
 @startuml
 skinparam classAttributeIconSize 0
 hide circles
+hide methods
 
 class Student {
   +naam: tekst
@@ -11,5 +12,5 @@ class Hobby {
   +naam: tekst
 }
 
-Student "1" --> "*" Hobby : heeft
+Student "1" -- "*" Hobby : heeft
 @enduml

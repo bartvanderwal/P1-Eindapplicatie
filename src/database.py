@@ -11,12 +11,12 @@ def haal_databaseverbinding_op():
 
     # voor het geval dit de eerste keer is, anders doen de statements niets
     db.execute('''CREATE TABLE IF NOT EXISTS persoon (
-                        naam VARCHAR(50) NOT NULL PRIMARY KEY, 
-                        afstand NUMERIC(3,1)
+                        naam TEXT NOT NULL PRIMARY KEY, 
+                        afstand NUMERIC(3,1) NOT NULL
                      )''')
     db.execute('''CREATE TABLE IF NOT EXISTS hobby (
-                        naam VARCHAR(50) NOT NULL, 
-                        hobby VARCHAR(75) NOT NULL, 
+                        naam TEXT NOT NULL, 
+                        hobby TEXT NOT NULL, 
                         PRIMARY KEY(naam, hobby), 
                         FOREIGN KEY(naam) REFERENCES persoon(naam)
                      )''')

@@ -1,11 +1,11 @@
 
 @startuml
 package "P1 Eindapplicatie" {
-  [Klaskompas] --> [Person Management]
-  [Klaskompas] --> [Hobby Management]
-  [Klaskompas] --> [Visualisation]
-  [Person Management] --> [Database]
-  [Hobby Management] --> [Database]
-  [Visualisation] --> [Database]
+  [Klaskompas] --> [Persoonsbeheer]
+  [Klaskompas] --> [Hobbybeheer]
+  [Klaskompas] --> [Visualisatie]
+  [Persoonsbeheer] --> [Database]
+  [Hobbybeheer] --> [Database]
+  [Visualisatie] --> [Database]
 }
 @enduml

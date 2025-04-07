@@ -44,7 +44,7 @@ def wijzig_afstand_in_database(naam, nieuwe_afstand):
     '''Functie om record bij te werken in database'''
     if not persoon_aanwezig_in_database(naam):
         print('Persoon niet gevonden in database.')
-    elif nieuwe_afstand < 0:
+    elif nieuwe_afstand <= 0:
         print('Ongeldige waarde voor afstand.')
     else:
         db = database.haal_databaseverbinding_op()

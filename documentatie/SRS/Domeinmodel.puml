@@ -1,0 +1,15 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide circles
+
+class Student {
+  +naam: tekst
+  +afstand: numeriek
+}
+
+class Hobby {
+  +naam: tekst
+}
+
+Student "1" --> "*" Hobby : heeft
+@enduml

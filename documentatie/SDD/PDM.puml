@@ -4,13 +4,13 @@ hide circle
 hide attributes
 
 entity persoon {
-    naam : VARCHAR(50) <<PK>>
+    naam : VARCHAR(50) NN <<PK>>
     afstand : NUMERIC(3,1)
 }
 
 entity hobby {
-    naam : VARCHAR(50) <<PK,FK>>
-    hobby : VARCHAR(75) <<PK>>
+    naam : VARCHAR(50) NN <<PK,FK>>
+    hobby : VARCHAR(75) NN <<PK>>
 }
 
 persoon <- hobby

@@ -3,16 +3,16 @@
 hide circle
 hide attributes
 
-entity person {
-    name : VARCHAR(50) <<PK>>
-    distance : NUMERIC(3,1)
+entity persoon {
+    naam : VARCHAR(50) <<PK>>
+    afstand : NUMERIC(3,1)
 }
 
 entity hobby {
-    name : VARCHAR(50) <<PK,FK>>
+    naam : VARCHAR(50) <<PK,FK>>
     hobby : VARCHAR(75) <<PK>>
 }
 
-person <- hobby
+persoon <- hobby
 
 @enduml

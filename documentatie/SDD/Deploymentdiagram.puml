@@ -1,0 +1,6 @@
+@startuml
+
+node "Computer" {
+    artifact "Klaskompas"
+}
+@enduml

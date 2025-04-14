@@ -18,6 +18,7 @@ import persoonsbeheer
 import hobbybeheer
 import visualisatie
 
+
 def main():
     '''Startpunt van de applicatie'''
     while True:
@@ -65,6 +66,7 @@ def main():
             break
         else:
             print('Ongeldige keuze. Probeer opnieuw.')
+
 
 if __name__ == '__main__':
     main()

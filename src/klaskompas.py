@@ -14,6 +14,7 @@
 # - Wat meer complexiteit in parameters en return values zou goed zijn, daar
 #   moeten ze mee oefenen.
 '''UI component (en startpunt) van de Eindapplicatie voor P1'''
+import database;
 import persoonsbeheer
 import hobbybeheer
 import visualisatie
@@ -35,6 +36,7 @@ def main():
         keuze = input('Kies een optie: ')
 
         if keuze == '1':
+            data.importeer_data();
             persoonsbeheer.importeer_personen_in_database()
         elif keuze == '2':
             naam = input('Voer naam in: ')

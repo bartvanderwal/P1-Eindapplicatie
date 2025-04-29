@@ -1,19 +1,7 @@
 '''CSV Import component voor Eindapplicatie voor P1'''
 
-import csv
 import database
 import hobbybeheer
-
-
-def importeer_personen_in_database():
-    '''Functie om data uit CSV-bestand te lezen'''
-    data = list()
-    # utf-8 encoding eigenlijk toevoegen, is dat iets voor P1?
-    with open('data/data.csv', 'r') as file:
-        csv_reader = csv.reader(file)
-        for rij in csv_reader:
-            data.append(rij)
-    voeg_persoon_toe_aan_database(data)
 
 
 def persoon_aanwezig_in_database(naam):

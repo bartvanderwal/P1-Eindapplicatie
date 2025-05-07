@@ -1,6 +1,9 @@
 '''Database component voor Eindapplicatie voor P1'''
 import sqlite3
+import csv
 
+import persoonsbeheer
+import hobbybeheer
 
 def haal_databaseverbinding_op():
     '''Functie om verbinding te maken met database'''

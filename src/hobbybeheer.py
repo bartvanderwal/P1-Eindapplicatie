@@ -22,7 +22,7 @@ def voeg_hobby_toe_aan_database_als_persoon_aanwezig(naam, hobby):
 
 
 def verwijder_hobby_uit_database(naam, hobby):
-    '''Functie om record te verwijderen uit database'''
+    '''Functie om hobby record te verwijderen uit database'''
     db = database.haal_databaseverbinding_op()
     db.execute('DELETE FROM hobby WHERE naam = ? and hobby = ?', (naam, hobby))
     database.verbreek_verbinding_met_database(db)
@@ -38,16 +38,69 @@ def verwijder_hobby_uit_database_indien_aanwezig(naam, hobby):
 
 
 def print_hobbys_aanwezig_in_database():
-    '''Functie om data uit database te halen en te printen'''
+    '''Functie om alle student hobby data uit database te halen en te printen'''
+
     db = database.haal_databaseverbinding_op()
+    # db.execute('SELECT naam, GROUP_CONCAT(hobby, \', \') AS hobbies FROM hobby GROUP BY naam ORDER BY naam')
     db.execute('SELECT naam, hobby FROM hobby ORDER BY naam')
     rijen = db.fetchall()
 
-    for naam, hobby in rijen:
-        print(naam, hobby)
+    if len(rijen) == 0:
+        print('Geen hobby\'s in database.')
+    else:
+        print('Hobby\'s in database:')
+
+        # Vooraf: lijst om naam + hobbies op te slaan
+        groepjes = []
+
+        for naam, hobby in rijen:
+            gevonden = False
+            for persoon in groepjes:
+                if persoon[0] == naam:
+                    persoon[1].append(hobby)
+                    gevonden = True
+                    break
+            if not gevonden:
+                groepjes.append([naam, [hobby]])
+
+        # Print netjes per persoon
+        for naam, hobbies in groepjes:
+            print(f"{naam}: {', '.join(hobbies)}")
 
     database.verbreek_verbinding_met_database(db)
 
+
+def print_alle_unieke_hobbies():
+    '''Functie om alle unieke hobby's in de database te printen ongeacht de student'''
+    db = database.haal_databaseverbinding_op()
+    db.execute('SELECT DISTINCT hobby FROM hobby ORDER BY hobby')
+    rijen = db.fetchall()
+    if len(rijen) == 0:
+        print('Geen hobby\'s in database.')
+    else:
+        print('Hobby\'s in database:')
+        for hobby in rijen:
+            print(hobby[0])
+    database.verbreek_verbinding_met_database(db)
+
+def samenvoegen_hobby(samen_te_voegen, samenvoegen_met):
+    '''Functie om alle unieke hobby's in de database te printen ongeacht de student'''
+    db = database.haal_databaseverbinding_op()
+    hobbies_result = db.execute('SELECT DISTINCT hobby FROM hobby ORDER BY hobby').fetchall()
+    hobbies = [r[0] for r in hobbies_result]  # lijst van strings
+
+    if samen_te_voegen == samenvoegen_met:
+        print('Hobby\'s zijn gelijk, niets te doen.')
+        return
+    if samen_te_voegen not in hobbies:
+        print('Hobby om te migreren niet gevonden in database.')
+        return
+    if samenvoegen_met not in hobbies:
+        print('Hobby om naar te migreren niet gevonden in database.')
+        return
+    db.execute('UPDATE hobby SET hobby = ? WHERE hobby = ?', (samenvoegen_met, samen_te_voegen))
+    database.verbreek_verbinding_met_database(db)
+    print('Hobby\'s samengevoegd in database.')
 
 def verwijder_alle_hobbys_uit_database():
     '''Functie om alle hobby's uit de database te verwijderen'''

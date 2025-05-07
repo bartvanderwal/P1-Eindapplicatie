@@ -1,23 +1,13 @@
 '''CSV Import component voor Eindapplicatie voor P1'''
 
-import csv
 import database
 import hobbybeheer
 
 
-def importeer_personen_in_database():
-    '''Functie om data uit CSV-bestand te lezen'''
-    data = list()
-    # utf-8 encoding eigenlijk toevoegen, is dat iets voor P1?
-    with open('data/data.csv', 'r') as file:
-        csv_reader = csv.reader(file)
-        for rij in csv_reader:
-            data.append(rij)
-    voeg_persoon_toe_aan_database(data)
-
-
 def persoon_aanwezig_in_database(naam):
     '''Functie om  te controleren of persoon in de database bestaat'''
+    print('persoon_aanwezig_in_database: naam:', naam)
+
     db = database.haal_databaseverbinding_op()
     db.execute('SELECT naam FROM persoon WHERE naam = ?', (naam,))
     row = db.fetchone()
@@ -27,15 +17,15 @@ def persoon_aanwezig_in_database(naam):
 
 def voeg_persoon_toe_aan_database(data):
     '''Functie om persoonsdata (naam, distance) in SQLite-database op te slaan'''
+    print('voeg_persoon_toe_aan_database: data:', data)
     db = database.haal_databaseverbinding_op()
 
-    for rij in data:
-        naam = rij[0]
-        afstand = float(rij[1])
-        if persoon_aanwezig_in_database(naam):
-            print('Persoon ' + naam + ' bestaat al in database.')
-        else:
-            db.execute('INSERT INTO persoon VALUES (?, ?)', (naam, afstand))
+    naam = data[0]
+    afstand = float(data[1])
+    if persoon_aanwezig_in_database(naam):
+        print('Persoon ' + naam + ' bestaat al in database.')
+    else:
+        db.execute('INSERT INTO persoon VALUES (?, ?)', (naam, afstand))
 
     database.verbreek_verbinding_met_database(db)
 

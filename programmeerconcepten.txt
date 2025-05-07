@@ -1,21 +1,28 @@
-output (print)
-input (input)
-variabelen (numeriek (int/decimal ?), boolean en tekst/aanhalingstekens)
-scope
-lijsten (toevoegen)
-conditionals
-rekenen ( komma/punt/*) ?
-indentation
-for (each)
-range ?
-functies
-logica (and/or/not) ?
-while
-lijst indexering ?
-debug ?
-objecten (gebruik)
+# Python programmeerconcepten 
 
-pep8 met juist instellingen
-sqllite3 editor
-python (linter?)
+Onderstaande de te leren concepten uit P1
+
+1. output (print)
+2. input (input)
+3. variabelen (numeriek (int/decimal ?), boolean en tekst/aanhalingstekens, concateneren)
+4. scope
+5. lijsten (toevoegen)
+6. conditionals
+7. rekenen ( komma/punt/*) en ook integer operators: //, %
+8. indentation
+9. for (each)
+10. range ?
+11. functies
+12. logica (and/or/not)
+13. while
+13. lijst indexering ? (en slice en * operator op lijst?)
+14. debug
+15. modules (opdelen in bestanden)
+16. objecten (gebruik)
+
+Python extensies
+16. Python interpreter
+    pep8 met juist instellingen
+17. sqlite3 editor
+18. python (linter (Pylance) en pep8 autoformatter?)
 

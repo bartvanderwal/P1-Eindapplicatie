@@ -80,7 +80,7 @@ Datum: Maandag 24 Maart 2025
 Aanwezig: Jan Janssen (docent), Marietje Puk (student)
 Locatie: HAN 
 
-Introductie
+## Introductie
 
 	•	Kunt u uzelf kort voorstellen en uw rol binnen de hogeschool toelichten?
 
@@ -88,9 +88,9 @@ Mijn naam is Jan Jansen en ik ben docent ICT aan de Hogeschool Arnhem Nijmegen. 
 
 	•	Wat is uw motivatie voor het ontwikkelen van deze applicatie?
 
-Ik merk dat het lastig is om een goed beeld te krijgen van de interesses en achtergrond van mijn studenten. Als ik weet waar ze wonen en wat hun hobby’s zijn, kan ik ze persoonlijker benaderen en beter begrijpen waarom bepaalde studenten bijvoorbeeld moeite hebben om op tijd te komen of niet goed integreren in de groep. Ook kan ik betere voorbeelden geven die aansluiten op hun de dingen die ze leuk vinden.
+Ik merk dat het lastig is om een goed beeld te krijgen van de interesses en achtergrond van mijn studenten. Als ik weet waar ze wonen en wat hun hobby’s zijn, kan ik ze persoonlijker benaderen en beter begrijpen waarom bepaalde studenten bijvoorbeeld moeite hebben om op tijd te komen of niet goed integreren in de groep. Ook kan ik betere voorbeelden geven die aansluiten op de dingen die ze leuk vinden.
 
-Huidige situatie
+## Huidige situatie
 
 	•	Hoe verzamelt u momenteel informatie over de studenten?
 
@@ -100,7 +100,7 @@ Momenteel houd ik dat handmatig bij in een Excel-bestand. Studenten vullen een f
 
 Het handmatig invoeren kost veel tijd en gegevens raken soms verouderd zonder dat ik het weet. Daarnaast is het moeilijk om studenten snel te vinden op basis van bepaalde kenmerken, zoals wie in dezelfde buurt woont of dezelfde hobby’s heeft.
 
-Wensen en functionaliteiten
+## Wensen en functionaliteiten
 
 	•	Wat zijn de belangrijkste gegevens die u per student wilt vastleggen?
 
@@ -108,18 +108,19 @@ De naam, woonplaats, en enkele hobby’s. De exacte straatnaam is niet nodig, ma
 
 	•	Hoe belangrijk is het dat de woonafstand automatisch wordt berekend?
 
-Dat hoeft niet echt. Deze informatie krijg van de HAN. Ik zou er wel graag een overzicht van hebben om in te kunnen schatten hoever een student moet reizen. Ook zou ik graag een wijziging kunnen aanbrengen voor als iemand verhuisd.
+Dat hoeft niet echt. Deze informatie krijg ik van de HAN. Ik zou er wel graag een overzicht van hebben om in te kunnen schatten hoever een student moet reizen. Ook zou ik graag een wijziging kunnen aanbrengen voor als iemand verhuisd.
 
 	•	Wilt u specifieke categorieën voor hobby’s of een vrije invuloptie?
 
-Een vrije invuloptie lijkt me prima om mee te beginnen. Wie weet dat ik daar later nog op terug kom. Een student kan natuurlijk meerdere hobby’s hebben en die wil ik allemaal kunnen registreren. Ook wil ik een hobby van een student kunnen verwijderen, in het geval iemand met een hobby gestopt is.
-Ook wil ik een lijst kunnen printen, zodat ik een overzicht kan gebruiken tijdens mijn lessen.
+Een vrije invuloptie lijkt me prima om mee te beginnen. Wel wil ik weet dat ik daar later nog op terug kom. Een student kan natuurlijk meerdere hobby’s hebben en die wil ik allemaal kunnen registreren. Ook wil ik een hobby van een student kunnen verwijderen, in het geval iemand met een hobby gestopt is.
+
+Ook wil ik een lijst kunnen printen, zodat ik een overzicht kan gebruiken tijdens mijn lessen. Ik wil ook studenten kunnen indelen in groepen van studenten met dezelfde hobby. Of wacht, nee eigenlijk juist in groepen met verschillende hobbies voor wat diversiteit. Maar dan is het wel belangrijk dat er ook functionaliteit is om twee net verschillend gespelde hobbies gelijk kan trekken, bijvoorbeeld 'handbal' en 'hand bal' (met spatie) of 'calografie' en 'kalografie'. Zeg maar het 'ontdubbelen' van de hobbys.
 
 	•	Wilt u dat studenten zelf hun gegevens kunnen invoeren of alleen dat u dit als docent beheert?
 
-Ik wil er graag zelf mee aan de slag. De studenten hoeven dit zelf niet in te kunnen voeren, en deze informatie is ook niet bedoeld om te delen. Ik moet de alle gegevens ook kunnen wissen om te kunnen voldoen aan de AVG wet.
+Ik wil er graag zelf mee aan de slag. De studenten hoeven dit zelf niet in te kunnen voeren, en deze informatie is ook niet bedoeld om te delen. Ik moet alle gegevens ook kunnen wissen om te kunnen voldoen aan de AVG wet.
 
-Gebruik en interactie
+## Gebruik en interactie
 
 	•	Hoe vaak verwacht u deze applicatie te gebruiken?
 
@@ -133,7 +134,7 @@ Dat hoeft op zich niet als ik maar een lijst van met de studenten en hun hobby�
 
 Nee, dat is op dit moment niet nodig. 
 
-Beheer en onderhoud
+## Beheer en onderhoud
 
 	•	Wie zou de gegevens moeten kunnen aanpassen (alleen u, ook studenten, etc.)?
 

@@ -21,8 +21,8 @@ Onderstaande de te leren concepten uit P1
 16. objecten (gebruik)
 
 Python extensies
-16. puthon interpreter
-1pep8 met juist instellingen
-17. sqllite3 editor
+16. Python interpreter
+    pep8 met juist instellingen
+17. sqlite3 editor
 18. python (linter (Pylance) en pep8 autoformatter?)
 

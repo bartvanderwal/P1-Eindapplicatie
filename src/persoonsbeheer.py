@@ -6,6 +6,8 @@ import hobbybeheer
 
 def persoon_aanwezig_in_database(naam):
     '''Functie om  te controleren of persoon in de database bestaat'''
+    print('persoon_aanwezig_in_database: naam:', naam)
+
     db = database.haal_databaseverbinding_op()
     db.execute('SELECT naam FROM persoon WHERE naam = ?', (naam,))
     row = db.fetchone()
@@ -15,15 +17,15 @@ def persoon_aanwezig_in_database(naam):
 
 def voeg_persoon_toe_aan_database(data):
     '''Functie om persoonsdata (naam, distance) in SQLite-database op te slaan'''
+    print('voeg_persoon_toe_aan_database: data:', data)
     db = database.haal_databaseverbinding_op()
 
-    for rij in data:
-        naam = rij[0]
-        afstand = float(rij[1])
-        if persoon_aanwezig_in_database(naam):
-            print('Persoon ' + naam + ' bestaat al in database.')
-        else:
-            db.execute('INSERT INTO persoon VALUES (?, ?)', (naam, afstand))
+    naam = data[0]
+    afstand = float(data[1])
+    if persoon_aanwezig_in_database(naam):
+        print('Persoon ' + naam + ' bestaat al in database.')
+    else:
+        db.execute('INSERT INTO persoon VALUES (?, ?)', (naam, afstand))
 
     database.verbreek_verbinding_met_database(db)
 

@@ -14,7 +14,7 @@
 # - Wat meer complexiteit in parameters en return values zou goed zijn, daar
 #   moeten ze mee oefenen.
 '''UI component (en startpunt) van de Eindapplicatie voor P1'''
-import database;
+import csvimport
 import persoonsbeheer
 import hobbybeheer
 import visualisatie
@@ -30,14 +30,14 @@ def main():
         print('4. Verwijder hobby voor persoon')
         print('5. Toon grafiek met afstand per persoon')
         print('6. Print hobby\'s per persoon')
-        print('7. Leeg database (alle data verwijderen)')
-        print('8. Stop')
+        print('7. Hobby\'s ontdubbelen...')
+        print('8. Leeg database (alle data verwijderen)')
+        print('9. Stop')
 
         keuze = input('Kies een optie: ')
 
         if keuze == '1':
-            data.importeer_data();
-            persoonsbeheer.importeer_personen_in_database()
+            csvimport.importeer_data()
         elif keuze == '2':
             naam = input('Voer naam in: ')
             hobby = input('Voer hobby in: ')
@@ -63,8 +63,21 @@ def main():
         elif keuze == '6':
             hobbybeheer.print_hobbys_aanwezig_in_database()
         elif keuze == '7':
-            persoonsbeheer.verwijder_alle_personen_uit_database()
+            hobbybeheer.print_alle_unieke_hobbies()
+            samen_te_voegen_hobby = input('Geef te migreren hobby (of niks om te stoppen)')
+            if samen_te_voegen_hobby=='':
+                print('Ontdubbeling geannuleerd.')
+                continue
+            samenvoegen_met = input('Geef hobby waar hobby ' + samen_te_voegen_hobby + ' mee samengevoegd moet worden (of nik om te stoppen)')
+            if samen_te_voegen_hobby == samenvoegen_met:
+                print('Hobby\'s zijn gelijk, niets te doen.')
+            elif samenvoegen_met=='':
+                print('Ontdubbeling geannuleerd.')
+            else:
+                hobbybeheer.samenvoegen_hobby(samen_te_voegen_hobby, samenvoegen_met)
         elif keuze == '8':
+            persoonsbeheer.verwijder_alle_personen_uit_database()
+        elif keuze == '9':
             break
         else:
             print('Ongeldige keuze. Probeer opnieuw.')

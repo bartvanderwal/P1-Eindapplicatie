@@ -41,15 +41,31 @@ def print_hobbys_aanwezig_in_database():
     '''Functie om alle student hobby data uit database te halen en te printen'''
 
     db = database.haal_databaseverbinding_op()
-    db.execute('SELECT naam, GROUP_CONCAT(hobby, \', \') AS hobbies FROM hobby GROUP BY naam ORDER BY naam')
+    # db.execute('SELECT naam, GROUP_CONCAT(hobby, \', \') AS hobbies FROM hobby GROUP BY naam ORDER BY naam')
+    db.execute('SELECT naam, hobby FROM hobby ORDER BY naam')
     rijen = db.fetchall()
 
     if len(rijen) == 0:
         print('Geen hobby\'s in database.')
     else:
         print('Hobby\'s in database:')
-        for naam, hobbies in rijen:
-            print(naam + ': ', hobbies)
+
+        # Vooraf: lijst om naam + hobbies op te slaan
+        groepjes = []
+
+        for naam, hobby in rijen:
+            gevonden = False
+            for persoon in groepjes:
+                if persoon[0] == naam:
+                    persoon[1].append(hobby)
+                    gevonden = True
+                    break
+            if not gevonden:
+                groepjes.append([naam, [hobby]])
+
+        # Print netjes per persoon
+        for naam, hobbies in groepjes:
+            print(f"{naam}: {', '.join(hobbies)}")
 
     database.verbreek_verbinding_met_database(db)
 
